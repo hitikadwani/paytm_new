@@ -1,6 +1,7 @@
 import db from "@repo/db/client";
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcrypt";
+import { getServerSession } from "next-auth";
 
 export const authOptions = {
     providers: [
@@ -64,3 +65,4 @@ export const authOptions = {
     }
   }
   
+export const getServerAuthSession = () => getServerSession(authOptions);
